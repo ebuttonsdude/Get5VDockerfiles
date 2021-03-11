@@ -1,5 +1,5 @@
 FROM alpine:latest
-MAINTAINER: Rhett Sandal
+MAINTAINER Rhett Sandal
 
 # update and install dependencies
 RUN apk update && apk add \
