@@ -26,6 +26,8 @@ RUN chmod +x /Get5API/Get5VDockerfiles/setDatabasePasswords.sh
 
 EXPOSE 3301
 
+VOLUME /Get5API/config
+
 WORKDIR /Get5API/Get5VDockerfiles
 CMD ./setDatabasePasswords.sh
 WORKDIR /Get5API
