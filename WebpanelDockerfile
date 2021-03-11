@@ -14,4 +14,4 @@ WORKDIR /G5V
 RUN ls -la /
 RUN ls -la /G5V
 
-#RUN yarn && yarn build
+RUN yarn && yarn build
