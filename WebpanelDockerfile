@@ -9,6 +9,6 @@ RUN apk update && apk add \
 RUN mkdir /G5V
 COPY .* /G5V/
 
-ENTRYPOINT /G5V
+WORKDIR /G5V
 
 RUN yarn && yarn build
