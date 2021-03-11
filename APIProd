@@ -11,8 +11,8 @@ SHELL ["/bin/bash", "--login", "-c"]
 
 # add yarn repo
 RUN curl -sS curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg \
-	| sudo apt-key add - echo "deb https://dl.yarnpkg.com/debian/ stable main" \
-	| sudo tee /etc/apt/sources.list.d/yarn.list
+	| apt-key add - echo "deb https://dl.yarnpkg.com/debian/ stable main" \
+	| tee /etc/apt/sources.list.d/yarn.list
 
 # install yarn and redis
 RUN apt install -y \
