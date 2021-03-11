@@ -1,0 +1,14 @@
+FROM alpine:latest
+MAINTAINER: Rhett Sandal
+
+# update and install dependencies
+RUN apk update && apk add \
+	nodejs \
+	yarn
+
+RUN mkdir /G5V
+ADD . /G5V
+
+ENTRYPOINT /G5V
+
+RUN yarn && yarn build
