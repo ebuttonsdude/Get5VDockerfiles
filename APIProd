@@ -22,6 +22,13 @@ RUN apt install -y \
 # add Get5API
 RUN mkdir /Get5API
 COPY . /Get5API
-WORKDIR /Get5API
+RUN chmod +x /Get5API/Get5VDockerfiles/setDatabasePasswords.sh
 
 EXPOSE 3301
+
+WORKDIR /Get5API/Get5VDockerfiles
+CMD ./setDatabasePasswords.sh
+WORKDIR /Get5API
+CMD "yarn migrate-produ-upgrade"
+CMD yarn
+CMD yarn start
