@@ -29,8 +29,8 @@ EXPOSE 3301
 VOLUME /Get5API/config
 
 WORKDIR /Get5API/Get5VDockerfiles
-CMD ./setDatabasePasswords.sh
+CMD "./setDatabasePasswords.sh"
 WORKDIR /Get5API
-CMD "yarn migrate-produ-upgrade"
-CMD yarn
-CMD yarn start
+CMD "yarn migrate-prod-upgrade"
+CMD "yarn"
+CMD "yarn start"
