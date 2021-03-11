@@ -11,4 +11,7 @@ COPY .* /G5V/
 
 WORKDIR /G5V
 
-RUN yarn && yarn build
+RUN ls -la /
+RUN ls -la /G5V
+
+#RUN yarn && yarn build
