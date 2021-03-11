@@ -1,0 +1,22 @@
+FROM mariadb:latest
+
+# install node
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+RUN nvm install 13.8.0
+
+# add yarn repo
+RUN curl -sS curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg \
+	| sudo apt-key add - echo "deb https://dl.yarnpkg.com/debian/ stable main" \
+	| sudo tee /etc/apt/sources.list.d/yarn.list
+
+# install yarn and redis
+RUN apt update && apt upgrade -y && apt install -y \
+	yarn \
+	redis-server
+
+# add Get5API
+RUN mkdir /Get5API
+COPY . /Get5API
+WORKDIR /Get5API
+
+EXPOSE 3301
