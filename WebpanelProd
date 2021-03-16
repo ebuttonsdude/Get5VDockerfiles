@@ -1,4 +1,4 @@
 FROM nginx:stable-alpine
 COPY ./dist /usr/share/nginx/html/
-COPY ./Get5VDockerfiles/nginx.conf /etc/nginx/nginx.conf
+#COPY ./Get5VDockerfiles/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
